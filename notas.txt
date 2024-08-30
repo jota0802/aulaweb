@@ -38,5 +38,19 @@ dentro de api crie o index.js e o db.js
 alem disso digite npm init -y --> criará uma api base
 (apagar o test e deixar senha vazia)
 
+depois disso colocar dentro de index.js:
+
+--------------------------------------
+import express from "express";
+import userRoutes from "./routes/users.js";
+import cors from "cors";
+
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+--------------------------------------
+
 depois disso adicionar no esquema de react
 
