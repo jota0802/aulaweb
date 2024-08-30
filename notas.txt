@@ -1,0 +1,42 @@
+abrir xampp, start o mysql services
+abrir mysql workbench, selecionar o caminho
+criar um banco -->schemas
+dubble click no banco 
+criar arquivo sql
+colocar o codigo:
+------------------------------
+
+create table tb_agenda
+(
+	codigo int auto_increment primary key,
+    nome varchar(50) not null,
+    telefone char(11) not null,
+    endereco varchar(50),
+    email varchar (60),
+    data_nasc date
+);
+
+insert into tb_agenda(nome,telefone,endereco,email,data_nasc)
+values('jota','11996200805','rua do jota', 'jotareidelas1234@gmail.com','2022.08.05')
+
+select *
+from tb_agenda;
+
+------------------------------------
+
+depois disso colocar o root em outro arquivo:
+
+------------------------------------------------------
+
+alter user 'root'@'localhost' identified with mysql_native_password (by 'senha');
+
+-------------------------------------------------
+
+depois disso abra o vscode e digite no terminal o npm install -global yarn 
+depois criar pasta api e pasta frontend
+dentro de api crie o index.js e o db.js
+alem disso digite npm init -y --> criará uma api base
+(apagar o test e deixar senha vazia)
+
+depois disso adicionar no esquema de react
+
