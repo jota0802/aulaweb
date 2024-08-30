@@ -50,7 +50,70 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
---------------------------------------
+app.use ("/", userRoutes);
 
-depois disso adicionar no esquema de react
+app.listen(8800);
+
+--------------------------------------
+depois criar um db.sj
+
+colocar o codigo:
+
+---------------------------
+import mysql from "mysql";
+
+export const db = mysql.createConnection({
+    host: "localhost",
+    user:"root",
+    password:"",
+    database:"db_usuario", // colocar o nome do seu banco
+    
+});
+-------------------------------------
+depois criar duas pastas, controllers e routes
+
+dentro das duas criar o user.js
+
+dentro do ./controllers/user.js
+
+--------------------------------
+
+import {db} from "../db.js"
+
+export const getUsers = (_, res) => {
+    const q = "select * from agenda";
+
+db.query(q, (err, data) => {
+    if (err) return res.json(err);  
+    
+    return res.status(200).json(data);
+});
+}
+------------------------------------------------
+
+dentro de ./routes/user.js
+
+------------------------------------------
+import express from "express";
+import{
+    getUsers,
+    addUser,
+    updateUser,
+    deleteUser
+} from "../controllers/user.js";
+
+const router = express.Router();
+
+router.get("/", getUsers);
+
+router.post("/", addUser);
+
+router.put("/:id", updateUser);
+
+router.delete("/:id", deleteUser);
+
+export default router; 
+
+-------------------------------------------
+
 
