@@ -32,7 +32,7 @@ alter user 'root'@'localhost' identified with mysql_native_password (by 'senha')
 
 -------------------------------------------------
 
-depois disso abra o vscode e digite no terminal o npm install -global yarn 
+depois disso abra o vscode e digite no terminal o npm install --global yarn 
 depois criar pasta api e pasta frontend
 dentro de api crie o index.js e o db.js
 alem disso digite npm init -y --> criará uma api base
@@ -116,4 +116,6 @@ export default router;
 
 -------------------------------------------
 
+
+yarn start
 
